@@ -1,0 +1,671 @@
+/* ---------------------------------------------- /*
+ * html
+/* ---------------------------------------------- */
+
+body{
+    /* Yana kaydırma çubuğunu kapattık */
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+/* ---------------------------------------------- /*
+ * "İndirim" Butonu
+/* ---------------------------------------------- */
+
+/* İndirim yazısını büyütüyor. */
+.badge {
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+/* İndirim yazısının konumunu ayarlıyor */
+.badge.bg-danger {
+    top: 10px; /* Üstten 10px mesafe */
+    left: 10px; /* Soldan 10px mesafe */
+}
+
+/* ---------------------------------------------- /*
+ * Kartlar / img Hover
+/* ---------------------------------------------- */
+
+  .card {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+
+  .card:hover {
+    transform: scale(1.03);
+  }
+
+  .ykn{
+    transition: transform 0.2s ease;
+  }
+  .ykn:hover{
+    transform: scale(1.03);
+  }
+
+
+.card p{
+    font-size: 14px;
+}
+
+  
+/* ---------------------------------------------- /*
+ * "Sepete Ekle" Butonu
+/* ---------------------------------------------- */
+
+.cart-icon {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #6b00fe;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-weight: bold;
+  }
+  
+  .cart-popup {
+    display: none;
+    position: absolute;
+    top: 35px;
+    right: 0;
+    left: 1px;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    width: 150px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    z-index: 99;
+  }
+  
+  .cart-icon:hover .cart-popup,
+  .cart-popup:hover {
+    display: block;
+  }
+  
+
+/* ---------------------------------------------- /*
+ * "Hesap" Butonu
+/* ---------------------------------------------- */
+
+
+
+/* ---------------------------------------------- /*
+ * "Yukarı Çık" Butonu
+/* ---------------------------------------------- */
+
+
+.scroll-top {
+	position: fixed;
+	bottom: 20px; /* Sayfanın altında konumlandır */
+	right: 20px; /* Sağ altta */
+	width: 50px;
+	height: 50px;
+	background-color: #6b00fe;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	font-size: 24px;
+	cursor: pointer;
+	display: none; /* Başlangıçta görünmez olacak */
+	transition: opacity 0.3s ease-in-out;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .scroll-top:hover {
+	background-color: #ffffff; /* Hover efekti */
+	color: #6b00fe;
+  }
+  
+
+/* ---------------------------------------------- /*
+ * "Tema Değiştir" Butonu
+/* ---------------------------------------------- */
+
+/* Temalar */
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+body.light-mode {
+  background-color: #f6f6f6;
+  color: black;
+}
+
+
+
+/* footer karanlık tema  */
+body.dark-mode .theme-section{
+    background-color: #0f0f0f;
+    color: white;
+}
+
+
+
+
+/* Sepete Ekle karanlık tema  */
+body.dark-mode .cart-count {
+    background-color: #0f0f0f;
+    color: white;
+}
+
+body.dark-mode .cart-popup {
+    background-color: #0f0f0f;
+    color: white;
+}
+
+
+
+
+/* Kartlar karanlık tema  */
+body.dark-mode .card {
+    background-color: #0f0f0f;
+    color: white;
+}
+
+
+
+
+
+/* Hesap İcon karanlık tema  */
+body.dark-mode #kayitgiris .bi {
+    background-color: #0f0f0f;
+    color: white;
+}
+
+
+
+
+/* Search karanlık tema  */
+body.dark-mode #search .bi {
+    background-color: #0f0f0f;
+    color: white;
+}
+
+body.dark-mode #search .search-wrapper {
+    background-color: #0f0f0f;
+    color: white;
+}
+
+body.dark-mode #search input {
+    background-color: #0f0f0f;
+    color: white;
+}
+
+
+/* harita karanlık tema  */
+body.dark-mode #iletisim .harita {
+    background-color: #0f0f0f;
+    color: white;
+    border: 10px solid #6b00fe;
+	padding: 0;
+}
+
+
+
+
+
+/* Toggle switch stil */
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: rgb(0, 0, 0);
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+/* Aktifken (dark mode) */
+input:checked + .slider {
+  background-color: #ccc;
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
+  background-color: rgb(255, 255, 255);
+}
+
+/* ---------------------------------------------- /*
+ * search
+/* ---------------------------------------------- */
+
+#search .search-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 50px;
+    padding: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: fit-content;
+    transition: all 0.4s ease;
+}
+
+#search .bi {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #6b00fe;
+    transition: color 0.3s ease;
+    flex-shrink: 0;
+}
+
+#search .bi:hover {
+    color: #5100c2;
+}
+
+#search input {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    width: 0;
+    opacity: 0;
+    padding: 0;
+    margin-left: 0;
+    background: transparent;
+    transition: all 0.4s ease;
+}
+
+/* Hover olunca input açılır */
+#search .search-wrapper:hover input {
+    width: 240px; /* istediğin kadar uzatabilirsin */
+    opacity: 1;
+    padding: 5px 10px;
+    margin-left: 10px;
+}
+
+
+/* ---------------------------------------------- /*
+ * Header
+/* ---------------------------------------------- */
+
+#header .header-row{
+    height: 50px;
+    margin: 10px 0 0 0;
+    padding: 0;
+}
+
+
+
+#header .bar{
+    background-color: #393E46;
+    /* background-color: #222831; */
+    border-radius: 100px;
+}
+
+
+#header .nav-link{
+    color: #fff;
+}
+
+
+
+#navhover a:hover{
+    color: #ffffff; /* Neon mavi renk */
+    text-shadow: 0 0 5px #6b00fe, 0 0 10px #6b00fe, 0 0 15px #6b00fe, 0 0 20px #6b00fe, 0 0 25px #6b00fe;
+}
+
+#kayitgiris a{
+    color: #6b00fe;
+}
+#kayitgiris a:hover{
+    color: #5100c2;
+}
+
+
+/* Logoların arkasına beyaz arka plan ekleme */
+#kayitgiris .bi{
+    width: 50px;
+      height: 50px;
+      background-color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+      font-size: 30px; /* Icon büyüklüğü */
+}
+
+
+/* ---------------------------------------------- /*
+ * Slider
+/* ---------------------------------------------- */
+
+#slider #slider1{
+    margin: 100px 0 0 0;
+    height: 450px;
+}
+
+#slider #slider1 .w-100{
+    /* height: 378px; */
+    height: 428px;
+}
+
+
+.sld{
+    border-radius: 20px;
+}
+
+
+/* ---------------------------------------------- /*
+ * content
+/* ---------------------------------------------- */
+
+/* #content1 .row{
+    height: 350px;
+}
+
+#content1 .col-2{
+    margin: 0 auto 0 0;
+}
+*/
+
+.btn{
+    background-color: #6b00fe;
+    color: #fff;
+}
+.btn:hover{
+    background-color: #5100c2;
+    color: #fff;
+}
+
+.dahafazla{
+    color:#6b00fe;
+}
+.dahafazla:hover{
+    color: #5100c2;
+}
+
+
+.slider-container {
+    overflow: hidden;
+    position: relative;
+    height: 450px;
+  }
+
+  .slider-track {
+    display: flex;
+    gap: 1rem;
+    animation: slide 50s linear infinite;
+    width: fit-content;
+    margin: 12px 0 0 0;
+  }
+
+  @keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .card {
+    width: 15rem;
+    flex-shrink: 0;
+  }
+
+
+/* Ekran kartları */
+#content2 .content2-row{
+    height: 400px;
+}
+
+#content2 .card{
+    margin: 0 auto 0 auto;
+}
+
+
+#content3 .content3-row{
+    height: 400px;
+}
+
+#content3 .col-2{
+    margin: 0 auto 0 0;
+}
+
+#content4 .content4-row{
+    height: 400px;
+}
+
+#content4 .col-2{
+    margin: 0 auto 0 0;
+}
+
+/* İşlemciler */
+#content5 .content5-row{
+    height: 400px;
+}
+
+#content5 .card{
+    margin: 0 auto 0 auto;
+}
+
+/* ---------------------------------------------- /*
+ * Footer
+/* ---------------------------------------------- */
+
+/* Varsayılan (light mode) */
+.theme-section {
+    background-color: #fff; /* açık gri arka plan */
+    color: #212529;
+  }
+
+
+#footer .row{
+    height: 320px;
+    margin: 100px 0 0 0;
+}
+
+#footer i{
+    color: #6b00fe;
+}
+#footer i:hover{
+    color: #5100c2;
+}
+
+#footer a{
+    color: #6b00fe; /*normal*/
+    /* color: #5800d3; az koyu */
+    /* color: #390088; Biraz daha koyu */
+}
+#footer a:hover{
+    color: #5100c2;
+}
+
+#footer .logo{
+    text-align: center;
+}
+
+#footer .lisans{
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+
+/* ---------------------------------------------- /*
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+/* ---------------------------------------------- /*
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+
+/* ---------------------------------------------- /*
+ * bilgisayarlar.html
+/* ---------------------------------------------- */
+
+#bilgisayarlar {
+    margin: 120px 0 0 0;
+}
+
+#bilgisayarlar .bilgisayarlar-row{
+    height: 400px;
+}
+
+#bilgisayarlar .card{
+    margin:0 auto 0 auto;
+}
+
+
+/* ---------------------------------------------- /*
+ * bilgisayarbilesenleri.html
+/* ---------------------------------------------- */
+
+#bilgisayarbilesenleri {
+    margin: 120px 0 0 0;
+}
+
+#bilgisayarbilesenleri .bilgisayarbilesenleri-row{
+    height: 400px;
+}
+
+#bilgisayarbilesenleri .card{
+    margin:0 auto 0 auto;
+}
+
+
+/* ---------------------------------------------- /*
+ * cevrebirimler.html
+/* ---------------------------------------------- */
+
+#cevrebirimler{
+    margin: 120px 0 0 0;
+}
+
+#cevrebirimler .cevrebirimler-row{
+    height: 400px;
+}
+
+#cevrebirimler .card{
+    margin:0 auto 0 auto;
+}
+
+
+/* ---------------------------------------------- /*
+ * yazilim.html
+/* ---------------------------------------------- */
+
+#yazilim {
+    margin: 120px 0 200px 0;
+}
+
+#yazilim .yazilim-row{
+    height: 400px;
+}
+
+#yazilim .card{
+    margin:0 auto 0 auto;
+}
+
+
+/* ---------------------------------------------- /*
+ * efsanecuma.html
+/* ---------------------------------------------- */
+
+#efsanecuma {
+    margin: 120px 0 0 0;
+}
+
+#efsanecuma .efsanecuma-row{
+    height: 400px;
+}
+
+#efsanecuma .card{
+    margin:0 auto 0 auto;
+}
+
+/* ---------------------------------------------- /*
+ * İletişim.html
+/* ---------------------------------------------- */
+
+#iletisim{
+    margin: 150px 0 0 0;
+}
+
+#iletisim .harita {
+	border: 10px solid #eee;
+	padding: 0;
+}
+
+#iletisim .iletisim-row{
+    height: 800px;
+}
+
+#iletisim h4{
+    color: #6b00fe;
+}
+
+#iletisim .btn{
+    font-size: 15px;
+}
+
+
+/* ---------------------------------------------- /*
+ * giriskayit.html
+/* ---------------------------------------------- */
+
+#giriskayit{
+    margin: 200px 0 200px 0;
+}
+
+#giriskayit .giriskayit-row{
+    height: 400px;
+}
+
+#giriskayit .giriskayit-col{
+    margin: 0 auto 0 auto;
+}
+
+#giriskayit h4{
+    text-align: center;
+    margin: 20px 0 10px 0;
+    color: #6b00fe;
+}
+
+#giriskayit p{
+    text-align: center;
+    font-size: 15px;
+}
+
